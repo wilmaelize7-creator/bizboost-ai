@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BizBOOST AI</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+header {
+  background: #111827;
+  color: white;
+  padding: 22px;
+  text-align: center;
+}
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+.hero {
+  text-align: center;
+  padding: 55px 20px;
+  background: white;
+}
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+.hero p {
+  font-size: 19px;
+  color: #667085;
+  max-width: 650px;
+  margin: auto;
+}
+.button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 28px;
+  background: #16a34a;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 20px;
+}
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+}
+.card h3 {
+  margin-top: 0;
+}
+.generator {
+  margin-top: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+}
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #111827;
+  color: white;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🚀 BizBOOST AI</div>
+  <p>AI Marketing Assistant for Small Businesses</p>
+</header>
+
+<section class="hero">
+  <h1>Grow Your Business With AI</h1>
+  <p>
+    Create marketing ideas, social media posts and business content
+    faster with BizBOOST AI.
+  </p>
+  <a href="#generator" class="button">Start Creating Free</a>
+</section>
+
+<div class="container">
+
+  <h2>Everything You Need to Market Your Business</h2>
+
+  <div class="features">
+    <div class="card">
+      <h3>📱 Social Media Posts</h3>
+      <p>Create engaging Facebook, Instagram and TikTok post ideas.</p>
+    </div>
+
+    <div class="card">
+      <h3>✍️ Marketing Copy</h3>
+      <p>Generate promotional messages and advertising copy.</p>
+    </div>
+
+    <div class="card">
+      <h3>💡 Business Ideas</h3>
+      <p>Get practical ideas to attract customers and grow.</p>
+    </div>
+
+    <div class="card">
+      <h3>⚡ Save Time</h3>
+      <p>Turn your business idea into marketing content in seconds.</p>
+    </div>
+  </div>
+
+  <div class="generator" id="generator">
+    <h2>AI Marketing Generator</h2>
+    <p>Tell BizBOOST AI what you want to promote.</p>
+
+    <textarea id="prompt"
+      placeholder="Example: Create a Facebook post for my small bakery promoting cupcakes..."></textarea>
+
+    <button class="button" onclick="generate()">
+      Generate Marketing Idea
+    </button>
+
+    <div id="result"></div>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 BizBOOST AI — Helping Small Businesses Grow
+</footer>
+
+<script>
+function generate() {
+  const prompt = document.getElementById("prompt").value;
+  const result = document.getElementById("result");
+
+  if (!prompt.trim()) {
+    result.innerHTML = "<p>Please enter something first.</p>";
+    return;
+  }
+
+  result.innerHTML = `
+    <div class="card" style="margin-top:20px;">
+      <h3>🚀 Your BizBOOST Marketing Draft</h3>
+      <p><strong>Your request:</strong> ${prompt}</p>
+      <p>
+      Here's your starting marketing idea:
+      Create an attention-grabbing post that clearly explains
+      your offer, highlights the customer benefit and ends with
+      a strong call to action.
+      </p>
+      <p><strong>Call to action:</strong> Message us today to get started!</p>
+    </div>
+  `;
+}
+</script>
+
+</body>
+  </html>
