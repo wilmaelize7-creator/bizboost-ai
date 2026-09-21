@@ -3,89 +3,175 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BizBOOST AI</title>
+<title>BizBOOST AI — AI Marketing Assistant</title>
+<meta name="description" content="BizBOOST AI helps small businesses create marketing content, social posts and growth ideas.">
+
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f7fb;
-  color: #172033;
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f5f7fb;
+  color:#172033;
 }
-header {
-  background: #111827;
-  color: white;
-  padding: 22px;
-  text-align: center;
+header{
+  background:#111827;
+  color:white;
+  padding:16px 20px;
+  position:sticky;
+  top:0;
+  z-index:100;
 }
-.logo {
-  font-size: 28px;
-  font-weight: bold;
+.nav{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
-.hero {
-  text-align: center;
-  padding: 55px 20px;
-  background: white;
+.logo{font-size:22px;font-weight:bold}
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:16px;
+  font-size:14px;
 }
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 15px;
+.menu{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:25px;
 }
-.hero p {
-  font-size: 19px;
-  color: #667085;
-  max-width: 650px;
-  margin: auto;
+.hero{
+  text-align:center;
+  padding:65px 20px;
+  background:white;
 }
-.button {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 15px 28px;
-  background: #16a34a;
-  color: white;
-  text-decoration: none;
-  border-radius: 10px;
-  font-weight: bold;
+.hero h1{
+  font-size:44px;
+  margin:10px 0;
 }
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
+.hero p{
+  max-width:680px;
+  margin:15px auto;
+  color:#667085;
+  font-size:18px;
+  line-height:1.6;
 }
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
-  gap: 20px;
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:40px 20px;
 }
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,.06);
+.button{
+  display:inline-block;
+  border:0;
+  cursor:pointer;
+  margin-top:15px;
+  padding:14px 22px;
+  background:#16a34a;
+  color:white;
+  border-radius:10px;
+  font-weight:bold;
+  text-decoration:none;
 }
-.card h3 {
-  margin-top: 0;
+.button.secondary{background:#111827}
+.button.light{background:#e8f7ed;color:#166534}
+.features,.tools,.pricing{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
 }
-.generator {
-  margin-top: 40px;
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
+.card{
+  background:white;
+  padding:24px;
+  border-radius:16px;
+  box-shadow:0 5px 20px rgba(0,0,0,.06);
+  margin-bottom:20px;
 }
-textarea {
-  width: 100%;
-  min-height: 120px;
-  padding: 15px;
-  box-sizing: border-box;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  margin: 15px 0;
+.card h3{margin-top:0}
+section{scroll-margin-top:80px}
+input,textarea,select{
+  width:100%;
+  padding:13px;
+  border:1px solid #d9dee8;
+  border-radius:10px;
+  margin:7px 0 15px;
+  font:inherit;
 }
-footer {
-  text-align: center;
-  padding: 30px;
-  background: #111827;
-  color: white;
-  margin-top: 40px;
+textarea{min-height:120px;resize:vertical}
+label{font-weight:bold;font-size:14px}
+.generator{
+  background:white;
+  padding:28px;
+  border-radius:16px;
+  margin-top:35px;
+  box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+.result{
+  margin-top:20px;
+  padding:20px;
+  background:#f0fdf4;
+  border-left:5px solid #16a34a;
+  border-radius:10px;
+  white-space:pre-wrap;
+  line-height:1.6;
+}
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin:20px 0;
+}
+.stat{
+  background:#111827;
+  color:white;
+  padding:20px;
+  border-radius:14px;
+  text-align:center;
+}
+.price{
+  font-size:30px;
+  font-weight:bold;
+}
+.saved-item,.day{
+  background:#f8fafc;
+  padding:15px;
+  border-radius:10px;
+  margin:10px 0;
+}
+footer{
+  text-align:center;
+  padding:35px 20px;
+  background:#111827;
+  color:white;
+  margin-top:40px;
+}
+.hidden{display:none}
+.small{font-size:13px;color:#667085}
+.success{color:#15803d;font-weight:bold}
+
+@media(max-width:700px){
+  nav{display:none}
+  .menu{display:block}
+  nav.open{
+    display:block;
+    position:absolute;
+    top:60px;
+    left:0;
+    right:0;
+    background:#111827;
+    padding:15px 20px;
+  }
+  nav.open a{
+    display:block;
+    padding:12px 0;
+    margin:0;
+  }
+  .hero h1{font-size:34px}
+  .stats{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -93,90 +179,759 @@ footer {
 <body>
 
 <header>
-  <div class="logo">🚀 BizBOOST AI</div>
-  <p>AI Marketing Assistant for Small Businesses</p>
+<div class="nav">
+<div class="logo">🚀 BizBOOST AI</div>
+
+<button class="menu" onclick="toggleMenu()">☰</button>
+
+<nav id="nav">
+<a href="#home">Home</a>
+<a href="#business">My Business</a>
+<a href="#create">Create</a>
+<a href="#content">My Content</a>
+<a href="#planner">Planner</a>
+<a href="#growth">Growth</a>
+<a href="#pricing">Pricing</a>
+</nav>
+</div>
 </header>
 
-<section class="hero">
-  <h1>Grow Your Business With AI</h1>
-  <p>
-    Create marketing ideas, social media posts and business content
-    faster with BizBOOST AI.
-  </p>
-  <a href="#generator" class="button">Start Creating Free</a>
+<section class="hero" id="home">
+<h1>Grow Your Business With AI</h1>
+<p>
+Create social media posts, advertisements, WhatsApp promotions,
+business ideas and marketing plans faster with BizBOOST AI.
+</p>
+
+<a href="#create" class="button">🚀 Start Creating Free</a>
 </section>
 
 <div class="container">
 
-  <h2>Everything You Need to Market Your Business</h2>
+<h2>Everything You Need to Market Your Business</h2>
 
-  <div class="features">
-    <div class="card">
-      <h3>📱 Social Media Posts</h3>
-      <p>Create engaging Facebook, Instagram and TikTok post ideas.</p>
-    </div>
+<div class="features">
 
-    <div class="card">
-      <h3>✍️ Marketing Copy</h3>
-      <p>Generate promotional messages and advertising copy.</p>
-    </div>
+<div class="card">
+<h3>📱 Social Media</h3>
+<p>Create Facebook, Instagram and TikTok content.</p>
+</div>
 
-    <div class="card">
-      <h3>💡 Business Ideas</h3>
-      <p>Get practical ideas to attract customers and grow.</p>
-    </div>
+<div class="card">
+<h3>✍️ Marketing Copy</h3>
+<p>Create promotional messages and advertisements.</p>
+</div>
 
-    <div class="card">
-      <h3>⚡ Save Time</h3>
-      <p>Turn your business idea into marketing content in seconds.</p>
-    </div>
-  </div>
+<div class="card">
+<h3>💡 Growth Ideas</h3>
+<p>Discover practical ways to attract customers.</p>
+</div>
 
-  <div class="generator" id="generator">
-    <h2>AI Marketing Generator</h2>
-    <p>Tell BizBOOST AI what you want to promote.</p>
+<div class="card">
+<h3>📅 Content Planner</h3>
+<p>Organise your marketing for the week.</p>
+</div>
 
-    <textarea id="prompt"
-      placeholder="Example: Create a Facebook post for my small bakery promoting cupcakes..."></textarea>
+</div>
 
-    <button class="button" onclick="generate()">
-      Generate Marketing Idea
-    </button>
+<section id="business">
 
-    <div id="result"></div>
-  </div>
+<h2>🏢 My Business</h2>
+
+<div class="card">
+
+<label>Business name</label>
+<input id="businessName" placeholder="Example: Sunshine Bakery">
+
+<label>Business type</label>
+<input id="businessType" placeholder="Example: Bakery">
+
+<label>What do you sell?</label>
+<input id="businessProduct" placeholder="Example: Cakes and cupcakes">
+
+<label>Who are your customers?</label>
+<input id="businessCustomers" placeholder="Example: Families and birthday customers">
+
+<label>Location</label>
+<input id="businessLocation" placeholder="Example: Bloemfontein">
+
+<label>WhatsApp number</label>
+<input id="businessWhatsapp" placeholder="Example: 0821234567">
+
+<button class="button" onclick="saveBusiness()">💾 Save Business Profile</button>
+
+<p id="businessSaved" class="success"></p>
+
+</div>
+</section>
+
+<section id="create">
+
+<div class="generator">
+
+<h2>🤖 AI Marketing Generator</h2>
+
+<p>Tell BizBOOST AI what you want to create.</p>
+
+<label>Content type</label>
+
+<select id="contentType">
+<option value="Facebook Post">📘 Facebook Post</option>
+<option value="Instagram Caption">📸 Instagram Caption</option>
+<option value="TikTok Script">🎵 TikTok Script</option>
+<option value="WhatsApp Promotion">💬 WhatsApp Promotion</option>
+<option value="Advertisement">📢 Advertisement</option>
+<option value="Marketing Email">✉️ Marketing Email</option>
+<option value="Business Idea">💡 Business Growth Idea</option>
+<option value="Product Description">🛍️ Product Description</option>
+<option value="Special Offer">🔥 Special Offer</option>
+</select>
+
+<label>What do you want to promote?</label>
+
+<textarea id="prompt"
+placeholder="Example: I want to promote a weekend cupcake special"></textarea>
+
+<label>Tone</label>
+
+<select id="tone">
+<option>Friendly</option>
+<option>Professional</option>
+<option>Exciting</option>
+<option>Urgent</option>
+<option>Funny</option>
+</select>
+
+<button class="button" onclick="generateContent()">
+🚀 Generate Marketing Content
+</button>
+
+<div id="result"></div>
+
+</div>
+</section>
+
+<section id="content">
+
+<h2>❤️ My Content</h2>
+
+<div class="card">
+
+<p class="small">
+Saved content is stored on this device.
+</p>
+
+<div id="savedContent">
+No saved content yet.
+</div>
+
+</div>
+
+</section>
+
+<section id="planner">
+
+<h2>📅 Content Planner</h2>
+
+<div class="card">
+
+<button class="button" onclick="generatePlan()">
+Generate Weekly Plan
+</button>
+
+<div id="plannerResult"></div>
+
+</div>
+
+</section>
+
+<section id="growth">
+
+<h2>🚀 Growth Tools</h2>
+
+<div class="tools">
+
+<div class="card">
+
+<h3>💰 R10,000 Monthly Goal</h3>
+
+<label>Monthly income goal</label>
+<input id="incomeGoal" type="number" value="10000">
+
+<label>Average sale amount</label>
+<input id="saleAmount" type="number" value="250">
+
+<button class="button" onclick="calculateGoal()">
+Calculate
+</button>
+
+<div id="goalResult"></div>
+
+</div>
+
+<div class="card">
+
+<h3>💡 Business Growth Idea</h3>
+
+<p>Get a simple marketing idea based on your business.</p>
+
+<button class="button" onclick="growthIdea()">
+Generate Idea
+</button>
+
+<div id="growthResult"></div>
+
+</div>
+
+<div class="card">
+
+<h3>🎯 Offer Generator</h3>
+
+<p>Create a simple promotional offer.</p>
+
+<button class="button" onclick="offerIdea()">
+Create Offer
+</button>
+
+<div id="offerResult"></div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="pricing">
+
+<h2>💳 BizBOOST AI Plans</h2>
+
+<div class="pricing">
+
+<div class="card">
+
+<h3>FREE</h3>
+
+<div class="price">R0</div>
+
+<p>Basic marketing generator</p>
+<p>Business profile</p>
+<p>Save content</p>
+<p>Growth tools</p>
+
+<button class="button light">Start Free</button>
+
+</div>
+
+<div class="card">
+
+<h3>PRO</h3>
+
+<div class="price">R99</div>
+
+<p>More content generation</p>
+<p>Social media content</p>
+<p>WhatsApp marketing</p>
+<p>Content planner</p>
+
+<button class="button" onclick="paymentComingSoon()">Upgrade to PRO</button>
+
+</div>
+
+<div class="card">
+
+<h3>BUSINESS</h3>
+
+<div class="price">R199</div>
+
+<p>Everything in PRO</p>
+<p>Marketing campaigns</p>
+<p>Advanced planning</p>
+<p>Business growth tools</p>
+
+<button class="button" onclick="paymentComingSoon()">Upgrade to BUSINESS</button>
+
+</div>
+
+</div>
+
+<p id="paymentMessage" class="success"></p>
+
+</section>
 
 </div>
 
 <footer>
-  © 2026 BizBOOST AI — Helping Small Businesses Grow
+© 2026 BizBOOST AI — Helping Small Businesses Grow
 </footer>
 
 <script>
-function generate() {
-  const prompt = document.getElementById("prompt").value;
-  const result = document.getElementById("result");
 
-  if (!prompt.trim()) {
-    result.innerHTML = "<p>Please enter something first.</p>";
-    return;
-  }
-
-  result.innerHTML = `
-    <div class="card" style="margin-top:20px;">
-      <h3>🚀 Your BizBOOST Marketing Draft</h3>
-      <p><strong>Your request:</strong> ${prompt}</p>
-      <p>
-      Here's your starting marketing idea:
-      Create an attention-grabbing post that clearly explains
-      your offer, highlights the customer benefit and ends with
-      a strong call to action.
-      </p>
-      <p><strong>Call to action:</strong> Message us today to get started!</p>
-    </div>
-  `;
+function toggleMenu(){
+document.getElementById("nav").classList.toggle("open");
 }
+
+function saveBusiness(){
+
+const business={
+name:document.getElementById("businessName").value,
+type:document.getElementById("businessType").value,
+product:document.getElementById("businessProduct").value,
+customers:document.getElementById("businessCustomers").value,
+location:document.getElementById("businessLocation").value,
+whatsapp:document.getElementById("businessWhatsapp").value
+};
+
+localStorage.setItem("bizboostBusiness",JSON.stringify(business));
+
+document.getElementById("businessSaved").innerText=
+"✓ Business profile saved successfully!";
+
+}
+
+function loadBusiness(){
+
+const data=localStorage.getItem("bizboostBusiness");
+
+if(!data)return;
+
+const b=JSON.parse(data);
+
+document.getElementById("businessName").value=b.name||"";
+document.getElementById("businessType").value=b.type||"";
+document.getElementById("businessProduct").value=b.product||"";
+document.getElementById("businessCustomers").value=b.customers||"";
+document.getElementById("businessLocation").value=b.location||"";
+document.getElementById("businessWhatsapp").value=b.whatsapp||"";
+
+}
+
+function getBusiness(){
+
+const data=localStorage.getItem("bizboostBusiness");
+
+if(data)return JSON.parse(data);
+
+return{
+name:"your business",
+type:"small business",
+product:"your product or service",
+customers:"your customers",
+location:"",
+whatsapp:""
+};
+
+}
+
+function generateContent(){
+
+const prompt=document.getElementById("prompt").value.trim();
+const type=document.getElementById("contentType").value;
+const tone=document.getElementById("tone").value;
+const result=document.getElementById("result");
+
+if(!prompt){
+result.innerHTML='<div class="result">Please tell me what you want to promote first.</div>';
+return;
+}
+
+const b=getBusiness();
+
+let text="";
+
+if(type==="Facebook Post"){
+
+text=
+`🚀 ${b.name}
+
+Looking for ${prompt.toLowerCase()}?
+
+We are here to help!
+
+Our ${b.product} is designed for ${b.customers}.
+
+📍 ${b.location || "Contact us for details"}
+
+Why not give us a try?
+
+💬 Message us today to find out more!
+
+#SmallBusiness #LocalBusiness #BizBOOSTAI`;
+
+}
+
+else if(type==="Instagram Caption"){
+
+text=
+`✨ ${prompt}
+
+At ${b.name}, we love helping ${b.customers} with ${b.product}.
+
+Ready to try it?
+
+📩 Send us a message today!
+
+#SmallBusiness #Entrepreneur #LocalBusiness`;
+
+}
+
+else if(type==="TikTok Script"){
+
+text=
+`🎬 TIKTOK SCRIPT
+
+Hook:
+"Are you looking for ${prompt}?"
+
+Scene 1:
+Show your product or service.
+
+Scene 2:
+Explain why customers choose ${b.name}.
+
+Scene 3:
+Show the customer benefit.
+
+Call to action:
+"Follow us and message us today!"
+
+Tone: ${tone}`;
+
+}
+
+else if(type==="WhatsApp Promotion"){
+
+text=
+`🔥 SPECIAL FROM ${b.name.toUpperCase()}
+
+${prompt}
+
+We help ${b.customers} with ${b.product}.
+
+Interested?
+
+Reply to this message or contact us today.
+
+📍 ${b.location || ""}
+`;
+
+}
+
+else if(type==="Advertisement"){
+
+text=
+`📢 ADVERTISEMENT
+
+${prompt}
+
+Looking for a trusted ${b.type}?
+
+${b.name} provides ${b.product} for ${b.customers}.
+
+✅ Convenient
+✅ Customer focused
+✅ Local service
+
+👉 Contact us today to get started.`;
+
+}
+
+else if(type==="Marketing Email"){
+
+text=
+`Subject: Don't Miss Out — ${prompt}
+
+Hello,
+
+We would like to introduce you to an opportunity from ${b.name}.
+
+${prompt}
+
+Our ${b.product} is designed with ${b.customers} in mind.
+
+If you'd like to learn more, simply reply to this message.
+
+Regards,
+${b.name}`;
+
+}
+
+else if(type==="Business Idea"){
+
+text=
+`💡 BUSINESS GROWTH IDEA
+
+For ${b.name}:
+
+Create a limited-time referral campaign.
+
+Offer existing customers a small incentive when they refer a new customer.
+
+Example:
+
+"Refer a friend and both of you receive a special offer."
+
+Promote the campaign on Facebook, WhatsApp and Instagram.
+
+Goal:
+Turn existing customers into a source of new customers.`;
+
+}
+
+else if(type==="Product Description"){
+
+text=
+`${b.product}
+
+Perfect for ${b.customers}.
+
+${b.name} focuses on providing a convenient and valuable solution for customers.
+
+✨ Quality service
+✨ Customer focused
+✨ Easy to order
+
+Message us today to learn more.`;
+
+}
+
+else if(type==="Special Offer"){
+
+text=
+`🔥 LIMITED-TIME OFFER
+
+${prompt}
+
+Available from ${b.name}.
+
+Perfect for ${b.customers}.
+
+🎁 Special opportunity
+⏰ Limited availability
+
+Message us today before the offer ends!`;
+
+}
+
+result.innerHTML=`
+<div class="result">
+<strong>🚀 Your BizBOOST Marketing Draft</strong>
+
+${escapeHTML(text)}
+
+<br><br>
+
+<button class="button" onclick='copyText(${JSON.stringify(text)})'>📋 Copy</button>
+
+<button class="button secondary" onclick='saveContent(${JSON.stringify(type)},${JSON.stringify(text)})'>❤️ Save</button>
+</div>
+`;
+
+}
+
+function escapeHTML(str){
+
+return str
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;");
+
+}
+
+function copyText(text){
+
+navigator.clipboard.writeText(text)
+.then(()=>alert("✓ Content copied!"))
+.catch(()=>alert("Please select and copy the text manually."));
+
+}
+
+function saveContent(type,text){
+
+let saved=JSON.parse(localStorage.getItem("bizboostContent")||"[]");
+
+saved.unshift({
+type:type,
+text:text,
+date:new Date().toLocaleString()
+});
+
+localStorage.setItem("bizboostContent",JSON.stringify(saved));
+
+displaySaved();
+
+alert("✓ Content saved!");
+
+}
+
+function displaySaved(){
+
+const box=document.getElementById("savedContent");
+
+let saved=JSON.parse(localStorage.getItem("bizboostContent")||"[]");
+
+if(!saved.length){
+
+box.innerHTML="No saved content yet.";
+return;
+
+}
+
+box.innerHTML="";
+
+saved.forEach((item,index)=>{
+
+const div=document.createElement("div");
+
+div.className="saved-item";
+
+div.innerHTML=
+`<strong>${escapeHTML(item.type)}</strong>
+<p>${escapeHTML(item.text)}</p>
+<span class="small">${escapeHTML(item.date)}</span>
+<br>
+<button class="button light" onclick='copyText(${JSON.stringify(item.text)})'>📋 Copy</button>
+<button class="button secondary" onclick="deleteSaved(${index})">Delete</button>`;
+
+box.appendChild(div);
+
+});
+
+}
+
+function deleteSaved(index){
+
+let saved=JSON.parse(localStorage.getItem("bizboostContent")||"[]");
+
+saved.splice(index,1);
+
+localStorage.setItem("bizboostContent",JSON.stringify(saved));
+
+displaySaved();
+
+}
+
+function generatePlan(){
+
+const b=getBusiness();
+
+const days=[
+"Monday — Educational tip about "+b.product,
+"Tuesday — Customer testimonial or success story",
+"Wednesday — Behind-the-scenes business post",
+"Thursday — Helpful tip for "+b.customers,
+"Friday — Special offer",
+"Saturday — Product/service showcase",
+"Sunday — Friendly community/engagement post"
+];
+
+document.getElementById("plannerResult").innerHTML=
+days.map(day=>`<div class="day">${day}</div>`).join("");
+
+}
+
+function calculateGoal(){
+
+const goal=Number(document.getElementById("incomeGoal").value);
+const sale=Number(document.getElementById("saleAmount").value);
+
+if(!goal||!sale){
+
+document.getElementById("goalResult").innerHTML=
+"<p>Please enter both amounts.</p>";
+
+return;
+
+}
+
+const sales=Math.ceil(goal/sale);
+const weekly=Math.ceil(sales/4.33);
+const daily=Math.ceil(sales/30);
+
+document.getElementById("goalResult").innerHTML=`
+<div class="stats">
+
+<div class="stat">
+<strong>${sales}</strong>
+<br>Sales/month
+</div>
+
+<div class="stat">
+<strong>${weekly}</strong>
+<br>Sales/week
+</div>
+
+<div class="stat">
+<strong>${daily}</strong>
+<br>Sales/day
+</div>
+
+</div>
+
+<p>
+At an average sale of R${sale.toLocaleString()},
+approximately <strong>${sales} sales per month</strong>
+would be needed to reach R${goal.toLocaleString()} in revenue.
+</p>
+`;
+
+}
+
+function growthIdea(){
+
+const b=getBusiness();
+
+document.getElementById("growthResult").innerHTML=`
+<div class="result">
+Try a "Refer a Friend" campaign for ${b.name}.
+
+Ask existing customers to recommend your ${b.product}
+to someone they know.
+
+Promote the campaign through WhatsApp,
+Facebook and Instagram.
+
+Test the campaign for 7 days and track how many
+new enquiries it generates.
+</div>
+`;
+
+}
+
+function offerIdea(){
+
+const b=getBusiness();
+
+document.getElementById("offerResult").innerHTML=`
+<div class="result">
+🔥 ${b.name} SPECIAL
+
+Get a special offer on ${b.product}.
+
+"Bring a friend and receive a special bonus."
+
+Add an expiry date to encourage customers to act.
+</div>
+`;
+
+}
+
+function paymentComingSoon(){
+
+document.getElementById("paymentMessage").innerText=
+"Payments are coming soon. You can use the free version while we prepare the paid plans.";
+
+}
+
+window.onload=function(){
+
+loadBusiness();
+displaySaved();
+
+};
+
 </script>
 
 </body>
-  </html>
+</html>
+
+
