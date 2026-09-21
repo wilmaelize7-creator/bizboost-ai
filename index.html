@@ -1,937 +1,715 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BizBOOST AI — AI Marketing Assistant</title>
-<meta name="description" content="BizBOOST AI helps small businesses create marketing content, social posts and growth ideas.">
-
-<style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#f5f7fb;
-  color:#172033;
-}
-header{
-  background:#111827;
-  color:white;
-  padding:16px 20px;
-  position:sticky;
-  top:0;
-  z-index:100;
-}
-.nav{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.logo{font-size:22px;font-weight:bold}
-nav a{
-  color:white;
-  text-decoration:none;
-  margin-left:16px;
-  font-size:14px;
-}
-.menu{
-  display:none;
-  background:none;
-  border:0;
-  color:white;
-  font-size:25px;
-}
-.hero{
-  text-align:center;
-  padding:65px 20px;
-  background:white;
-}
-.hero h1{
-  font-size:44px;
-  margin:10px 0;
-}
-.hero p{
-  max-width:680px;
-  margin:15px auto;
-  color:#667085;
-  font-size:18px;
-  line-height:1.6;
-}
-.container{
-  max-width:1100px;
-  margin:auto;
-  padding:40px 20px;
-}
-.button{
-  display:inline-block;
-  border:0;
-  cursor:pointer;
-  margin-top:15px;
-  padding:14px 22px;
-  background:#16a34a;
-  color:white;
-  border-radius:10px;
-  font-weight:bold;
-  text-decoration:none;
-}
-.button.secondary{background:#111827}
-.button.light{background:#e8f7ed;color:#166534}
-.features,.tools,.pricing{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-}
-.card{
-  background:white;
-  padding:24px;
-  border-radius:16px;
-  box-shadow:0 5px 20px rgba(0,0,0,.06);
-  margin-bottom:20px;
-}
-.card h3{margin-top:0}
-section{scroll-margin-top:80px}
-input,textarea,select{
-  width:100%;
-  padding:13px;
-  border:1px solid #d9dee8;
-  border-radius:10px;
-  margin:7px 0 15px;
-  font:inherit;
-}
-textarea{min-height:120px;resize:vertical}
-label{font-weight:bold;font-size:14px}
-.generator{
-  background:white;
-  padding:28px;
-  border-radius:16px;
-  margin-top:35px;
-  box-shadow:0 5px 20px rgba(0,0,0,.06);
-}
-.result{
-  margin-top:20px;
-  padding:20px;
-  background:#f0fdf4;
-  border-left:5px solid #16a34a;
-  border-radius:10px;
-  white-space:pre-wrap;
-  line-height:1.6;
-}
-.stats{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
-  margin:20px 0;
-}
-.stat{
-  background:#111827;
-  color:white;
-  padding:20px;
-  border-radius:14px;
-  text-align:center;
-}
-.price{
-  font-size:30px;
-  font-weight:bold;
-}
-.saved-item,.day{
-  background:#f8fafc;
-  padding:15px;
-  border-radius:10px;
-  margin:10px 0;
-}
-footer{
-  text-align:center;
-  padding:35px 20px;
-  background:#111827;
-  color:white;
-  margin-top:40px;
-}
-.hidden{display:none}
-.small{font-size:13px;color:#667085}
-.success{color:#15803d;font-weight:bold}
-
-@media(max-width:700px){
-  nav{display:none}
-  .menu{display:block}
-  nav.open{
-    display:block;
-    position:absolute;
-    top:60px;
-    left:0;
-    right:0;
-    background:#111827;
-    padding:15px 20px;
-  }
-  nav.open a{
-    display:block;
-    padding:12px 0;
-    margin:0;
-  }
-  .hero h1{font-size:34px}
-  .stats{grid-template-columns:1fr}
-}
-</style>
-</head>
-
-<body>
-
-<header>
-<div class="nav">
-<div class="logo">🚀 BizBOOST AI</div>
-
-<button class="menu" onclick="toggleMenu()">☰</button>
-
-<nav id="nav">
-<a href="#home">Home</a>
-<a href="#business">My Business</a>
-<a href="#create">Create</a>
-<a href="#content">My Content</a>
-<a href="#planner">Planner</a>
-<a href="#growth">Growth</a>
-<a href="#pricing">Pricing</a>
-</nav>
-</div>
-</header>
-
-<section class="hero" id="home">
-<h1>Grow Your Business With AI</h1>
-<p>
-Create social media posts, advertisements, WhatsApp promotions,
-business ideas and marketing plans faster with BizBOOST AI.
-</p>
-
-<a href="#create" class="button">🚀 Start Creating Free</a>
-</section>
-
-<div class="container">
-
-<h2>Everything You Need to Market Your Business</h2>
-
-<div class="features">
-
-<div class="card">
-<h3>📱 Social Media</h3>
-<p>Create Facebook, Instagram and TikTok content.</p>
-</div>
-
-<div class="card">
-<h3>✍️ Marketing Copy</h3>
-<p>Create promotional messages and advertisements.</p>
-</div>
-
-<div class="card">
-<h3>💡 Growth Ideas</h3>
-<p>Discover practical ways to attract customers.</p>
-</div>
-
-<div class="card">
-<h3>📅 Content Planner</h3>
-<p>Organise your marketing for the week.</p>
-</div>
-
-</div>
-
-<section id="business">
-
-<h2>🏢 My Business</h2>
-
-<div class="card">
-
-<label>Business name</label>
-<input id="businessName" placeholder="Example: Sunshine Bakery">
-
-<label>Business type</label>
-<input id="businessType" placeholder="Example: Bakery">
-
-<label>What do you sell?</label>
-<input id="businessProduct" placeholder="Example: Cakes and cupcakes">
-
-<label>Who are your customers?</label>
-<input id="businessCustomers" placeholder="Example: Families and birthday customers">
-
-<label>Location</label>
-<input id="businessLocation" placeholder="Example: Bloemfontein">
-
-<label>WhatsApp number</label>
-<input id="businessWhatsapp" placeholder="Example: 0821234567">
-
-<button class="button" onclick="saveBusiness()">💾 Save Business Profile</button>
-
-<p id="businessSaved" class="success"></p>
-
-</div>
-</section>
-
-<section id="create">
-
-<div class="generator">
-
-<h2>🤖 AI Marketing Generator</h2>
-
-<p>Tell BizBOOST AI what you want to create.</p>
-
-<label>Content type</label>
-
-<select id="contentType">
-<option value="Facebook Post">📘 Facebook Post</option>
-<option value="Instagram Caption">📸 Instagram Caption</option>
-<option value="TikTok Script">🎵 TikTok Script</option>
-<option value="WhatsApp Promotion">💬 WhatsApp Promotion</option>
-<option value="Advertisement">📢 Advertisement</option>
-<option value="Marketing Email">✉️ Marketing Email</option>
-<option value="Business Idea">💡 Business Growth Idea</option>
-<option value="Product Description">🛍️ Product Description</option>
-<option value="Special Offer">🔥 Special Offer</option>
-</select>
+Build and finish my complete web app called BizBOOST AI.
 
-<label>What do you want to promote?</label>
 
-<textarea id="prompt"
-placeholder="Example: I want to promote a weekend cupcake special"></textarea>
+IMPORTANT:
 
-<label>Tone</label>
 
-<select id="tone">
-<option>Friendly</option>
-<option>Professional</option>
-<option>Exciting</option>
-<option>Urgent</option>
-<option>Funny</option>
-</select>
 
-<button class="button" onclick="generateContent()">
-🚀 Generate Marketing Content
-</button>
 
-<div id="result"></div>
+The correct brand name is BizBOOST AI
 
-</div>
-</section>
 
-<section id="content">
+Do NOT use “BizBoots AI” anywhere.
 
-<h2>❤️ My Content</h2>
 
-<div class="card">
+Make the app mobile-first and fully responsive.
 
-<p class="small">
-Saved content is stored on this device.
-</p>
 
-<div id="savedContent">
-No saved content yet.
-</div>
+The app must look like a real commercial SaaS product, not a demo.
 
-</div>
 
-</section>
+Keep the interface simple enough for a small-business owner using a phone.
 
-<section id="planner">
 
-<h2>📅 Content Planner</h2>
 
-<div class="card">
 
-<button class="button" onclick="generatePlan()">
-Generate Weekly Plan
-</button>
+BRAND
 
-<div id="plannerResult"></div>
 
-</div>
+Name: BizBOOST AI
 
-</section>
 
-<section id="growth">
+Tagline:
+“Your AI marketing assistant for small business.”
 
-<h2>🚀 Growth Tools</h2>
 
-<div class="tools">
+Short description:
+“Create social posts, ads, captions, content ideas and marketing plans in minutes with AI.”
 
-<div class="card">
 
-<h3>💰 R10,000 Monthly Goal</h3>
+HOMEPAGE
 
-<label>Monthly income goal</label>
-<input id="incomeGoal" type="number" value="10000">
 
-<label>Average sale amount</label>
-<input id="saleAmount" type="number" value="250">
+Create a professional landing page with:
 
-<button class="button" onclick="calculateGoal()">
-Calculate
-</button>
 
-<div id="goalResult"></div>
+Hero:
+BizBOOST AI
+Your AI Marketing Assistant for Small Business
 
-</div>
 
-<div class="card">
+Subtitle:
+Create better marketing content in minutes — without needing a marketing agency.
 
-<h3>💡 Business Growth Idea</h3>
 
-<p>Get a simple marketing idea based on your business.</p>
+Buttons:
 
-<button class="button" onclick="growthIdea()">
-Generate Idea
-</button>
 
-<div id="growthResult"></div>
 
-</div>
 
-<div class="card">
+Start Free
 
-<h3>🎯 Offer Generator</h3>
 
-<p>Create a simple promotional offer.</p>
+Try BizBOOST AI
 
-<button class="button" onclick="offerIdea()">
-Create Offer
-</button>
 
-<div id="offerResult"></div>
 
-</div>
 
-</div>
+Sections:
 
-</section>
 
-<section id="pricing">
 
-<h2>💳 BizBOOST AI Plans</h2>
 
-<div class="pricing">
+What BizBOOST AI does
 
-<div class="card">
 
-<h3>FREE</h3>
+AI marketing tools
 
-<div class="price">R0</div>
 
-<p>Basic marketing generator</p>
-<p>Business profile</p>
-<p>Save content</p>
-<p>Growth tools</p>
+How it works
 
-<button class="button light">Start Free</button>
 
-</div>
+Free vs Pro
 
-<div class="card">
 
-<h3>PRO</h3>
+FAQ
 
-<div class="price">R99</div>
 
-<p>More content generation</p>
-<p>Social media content</p>
-<p>WhatsApp marketing</p>
-<p>Content planner</p>
+Call to action
 
-<button class="button" onclick="paymentComingSoon()">Upgrade to PRO</button>
 
-</div>
 
-<div class="card">
 
-<h3>BUSINESS</h3>
+USER ACCOUNT
 
-<div class="price">R199</div>
 
-<p>Everything in PRO</p>
-<p>Marketing campaigns</p>
-<p>Advanced planning</p>
-<p>Business growth tools</p>
+Create:
 
-<button class="button" onclick="paymentComingSoon()">Upgrade to BUSINESS</button>
 
-</div>
 
-</div>
 
-<p id="paymentMessage" class="success"></p>
+Sign up
 
-</section>
 
-</div>
+Login
 
-<footer>
-© 2026 BizBOOST AI — Helping Small Businesses Grow
-</footer>
 
-<script>
+Logout
 
-function toggleMenu(){
-document.getElementById("nav").classList.toggle("open");
-}
 
-function saveBusiness(){
+Forgot password
 
-const business={
-name:document.getElementById("businessName").value,
-type:document.getElementById("businessType").value,
-product:document.getElementById("businessProduct").value,
-customers:document.getElementById("businessCustomers").value,
-location:document.getElementById("businessLocation").value,
-whatsapp:document.getElementById("businessWhatsapp").value
-};
 
-localStorage.setItem("bizboostBusiness",JSON.stringify(business));
+User profile
 
-document.getElementById("businessSaved").innerText=
-"✓ Business profile saved successfully!";
 
-}
 
-function loadBusiness(){
 
-const data=localStorage.getItem("bizboostBusiness");
+After login, send the user to the dashboard.
 
-if(!data)return;
 
-const b=JSON.parse(data);
+DASHBOARD
 
-document.getElementById("businessName").value=b.name||"";
-document.getElementById("businessType").value=b.type||"";
-document.getElementById("businessProduct").value=b.product||"";
-document.getElementById("businessCustomers").value=b.customers||"";
-document.getElementById("businessLocation").value=b.location||"";
-document.getElementById("businessWhatsapp").value=b.whatsapp||"";
 
-}
+Create a clean mobile dashboard.
 
-function getBusiness(){
 
-const data=localStorage.getItem("bizboostBusiness");
+Header:
+“Good morning 👋”
+“Let’s grow your business today.”
 
-if(data)return JSON.parse(data);
 
-return{
-name:"your business",
-type:"small business",
-product:"your product or service",
-customers:"your customers",
-location:"",
-whatsapp:""
-};
+Display tool cards:
 
-}
 
-function generateContent(){
 
-const prompt=document.getElementById("prompt").value.trim();
-const type=document.getElementById("contentType").value;
-const tone=document.getElementById("tone").value;
-const result=document.getElementById("result");
 
-if(!prompt){
-result.innerHTML='<div class="result">Please tell me what you want to promote first.</div>';
-return;
-}
+Social Media Post
 
-const b=getBusiness();
 
-let text="";
+Caption Generator
 
-if(type==="Facebook Post"){
 
-text=
-`🚀 ${b.name}
+Ad Copy Generator
 
-Looking for ${prompt.toLowerCase()}?
 
-We are here to help!
+Business Ideas
 
-Our ${b.product} is designed for ${b.customers}.
 
-📍 ${b.location || "Contact us for details"}
+Hashtag Generator
 
-Why not give us a try?
 
-💬 Message us today to find out more!
+Content Planner
 
-#SmallBusiness #LocalBusiness #BizBOOSTAI`;
 
-}
 
-else if(type==="Instagram Caption"){
 
-text=
-`✨ ${prompt}
+Each card must open its own working tool.
 
-At ${b.name}, we love helping ${b.customers} with ${b.product}.
 
-Ready to try it?
+TOOL 1 — SOCIAL MEDIA POST GENERATOR
 
-📩 Send us a message today!
 
-#SmallBusiness #Entrepreneur #LocalBusiness`;
+Inputs:
 
-}
 
-else if(type==="TikTok Script"){
 
-text=
-`🎬 TIKTOK SCRIPT
 
-Hook:
-"Are you looking for ${prompt}?"
+Business name
 
-Scene 1:
-Show your product or service.
 
-Scene 2:
-Explain why customers choose ${b.name}.
+Business type
 
-Scene 3:
-Show the customer benefit.
 
-Call to action:
-"Follow us and message us today!"
+Product/service
 
-Tone: ${tone}`;
 
-}
+Target audience
 
-else if(type==="WhatsApp Promotion"){
 
-text=
-`🔥 SPECIAL FROM ${b.name.toUpperCase()}
+Platform
 
-${prompt}
 
-We help ${b.customers} with ${b.product}.
+Tone
 
-Interested?
 
-Reply to this message or contact us today.
+Topic
 
-📍 ${b.location || ""}
-`;
 
-}
 
-else if(type==="Advertisement"){
 
-text=
-`📢 ADVERTISEMENT
+Platform options:
+Facebook
+Instagram
+TikTok
+LinkedIn
+WhatsApp
 
-${prompt}
 
-Looking for a trusted ${b.type}?
+Tone options:
+Professional
+Friendly
+Funny
+Inspirational
+Promotional
 
-${b.name} provides ${b.product} for ${b.customers}.
 
-✅ Convenient
-✅ Customer focused
-✅ Local service
+Generate:
 
-👉 Contact us today to get started.`;
 
-}
 
-else if(type==="Marketing Email"){
 
-text=
-`Subject: Don't Miss Out — ${prompt}
+Post
 
-Hello,
 
-We would like to introduce you to an opportunity from ${b.name}.
+Headline
 
-${prompt}
 
-Our ${b.product} is designed with ${b.customers} in mind.
+Call to action
 
-If you'd like to learn more, simply reply to this message.
 
-Regards,
-${b.name}`;
+Hashtags
 
-}
 
-else if(type==="Business Idea"){
 
-text=
-`💡 BUSINESS GROWTH IDEA
 
-For ${b.name}:
+Buttons:
+Generate
+Copy
+Regenerate
 
-Create a limited-time referral campaign.
 
-Offer existing customers a small incentive when they refer a new customer.
+TOOL 2 — CAPTION GENERATOR
 
-Example:
 
-"Refer a friend and both of you receive a special offer."
+Inputs:
 
-Promote the campaign on Facebook, WhatsApp and Instagram.
 
-Goal:
-Turn existing customers into a source of new customers.`;
 
-}
 
-else if(type==="Product Description"){
+Product/service
 
-text=
-`${b.product}
 
-Perfect for ${b.customers}.
+Platform
 
-${b.name} focuses on providing a convenient and valuable solution for customers.
 
-✨ Quality service
-✨ Customer focused
-✨ Easy to order
+Tone
 
-Message us today to learn more.`;
 
-}
+Goal
 
-else if(type==="Special Offer"){
 
-text=
-`🔥 LIMITED-TIME OFFER
 
-${prompt}
 
-Available from ${b.name}.
+Generate several caption options.
 
-Perfect for ${b.customers}.
 
-🎁 Special opportunity
-⏰ Limited availability
+Buttons:
+Generate
+Copy
+Regenerate
 
-Message us today before the offer ends!`;
 
-}
+TOOL 3 — AD COPY GENERATOR
 
-result.innerHTML=`
-<div class="result">
-<strong>🚀 Your BizBOOST Marketing Draft</strong>
 
-${escapeHTML(text)}
+Inputs:
 
-<br><br>
 
-<button class="button" onclick='copyText(${JSON.stringify(text)})'>📋 Copy</button>
 
-<button class="button secondary" onclick='saveContent(${JSON.stringify(type)},${JSON.stringify(text)})'>❤️ Save</button>
-</div>
-`;
 
-}
+Business
 
-function escapeHTML(str){
 
-return str
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;");
+Product/service
 
-}
 
-function copyText(text){
+Target customer
 
-navigator.clipboard.writeText(text)
-.then(()=>alert("✓ Content copied!"))
-.catch(()=>alert("Please select and copy the text manually."));
 
-}
+Offer
 
-function saveContent(type,text){
 
-let saved=JSON.parse(localStorage.getItem("bizboostContent")||"[]");
+Platform
 
-saved.unshift({
-type:type,
-text:text,
-date:new Date().toLocaleString()
-});
 
-localStorage.setItem("bizboostContent",JSON.stringify(saved));
+Call to action
 
-displaySaved();
 
-alert("✓ Content saved!");
 
-}
 
-function displaySaved(){
+Generate:
 
-const box=document.getElementById("savedContent");
 
-let saved=JSON.parse(localStorage.getItem("bizboostContent")||"[]");
 
-if(!saved.length){
 
-box.innerHTML="No saved content yet.";
-return;
+Ad headline
 
-}
 
-box.innerHTML="";
+Primary text
 
-saved.forEach((item,index)=>{
 
-const div=document.createElement("div");
+CTA
 
-div.className="saved-item";
 
-div.innerHTML=
-`<strong>${escapeHTML(item.type)}</strong>
-<p>${escapeHTML(item.text)}</p>
-<span class="small">${escapeHTML(item.date)}</span>
-<br>
-<button class="button light" onclick='copyText(${JSON.stringify(item.text)})'>📋 Copy</button>
-<button class="button secondary" onclick="deleteSaved(${index})">Delete</button>`;
+Short version
 
-box.appendChild(div);
 
-});
+Long version
 
-}
 
-function deleteSaved(index){
 
-let saved=JSON.parse(localStorage.getItem("bizboostContent")||"[]");
 
-saved.splice(index,1);
+TOOL 4 — BUSINESS IDEAS
 
-localStorage.setItem("bizboostContent",JSON.stringify(saved));
 
-displaySaved();
+Inputs:
 
-}
 
-function generatePlan(){
 
-const b=getBusiness();
 
-const days=[
-"Monday — Educational tip about "+b.product,
-"Tuesday — Customer testimonial or success story",
-"Wednesday — Behind-the-scenes business post",
-"Thursday — Helpful tip for "+b.customers,
-"Friday — Special offer",
-"Saturday — Product/service showcase",
-"Sunday — Friendly community/engagement post"
-];
+Industry
 
-document.getElementById("plannerResult").innerHTML=
-days.map(day=>`<div class="day">${day}</div>`).join("");
 
-}
+Location
 
-function calculateGoal(){
 
-const goal=Number(document.getElementById("incomeGoal").value);
-const sale=Number(document.getElementById("saleAmount").value);
+Budget
 
-if(!goal||!sale){
 
-document.getElementById("goalResult").innerHTML=
-"<p>Please enter both amounts.</p>";
+Skills/interests
 
-return;
 
-}
 
-const sales=Math.ceil(goal/sale);
-const weekly=Math.ceil(sales/4.33);
-const daily=Math.ceil(sales/30);
 
-document.getElementById("goalResult").innerHTML=`
-<div class="stats">
+Generate practical business ideas with:
 
-<div class="stat">
-<strong>${sales}</strong>
-<br>Sales/month
-</div>
 
-<div class="stat">
-<strong>${weekly}</strong>
-<br>Sales/week
-</div>
 
-<div class="stat">
-<strong>${daily}</strong>
-<br>Sales/day
-</div>
 
-</div>
+Idea
 
-<p>
-At an average sale of R${sale.toLocaleString()},
-approximately <strong>${sales} sales per month</strong>
-would be needed to reach R${goal.toLocaleString()} in revenue.
-</p>
-`;
 
-}
+Target customer
 
-function growthIdea(){
 
-const b=getBusiness();
+How it makes money
 
-document.getElementById("growthResult").innerHTML=`
-<div class="result">
-Try a "Refer a Friend" campaign for ${b.name}.
 
-Ask existing customers to recommend your ${b.product}
-to someone they know.
+Startup requirements
 
-Promote the campaign through WhatsApp,
-Facebook and Instagram.
 
-Test the campaign for 7 days and track how many
-new enquiries it generates.
-</div>
-`;
+Marketing idea
 
-}
 
-function offerIdea(){
 
-const b=getBusiness();
 
-document.getElementById("offerResult").innerHTML=`
-<div class="result">
-🔥 ${b.name} SPECIAL
+TOOL 5 — HASHTAG GENERATOR
 
-Get a special offer on ${b.product}.
 
-"Bring a friend and receive a special bonus."
+Inputs:
 
-Add an expiry date to encourage customers to act.
-</div>
-`;
 
-}
 
-function paymentComingSoon(){
 
-document.getElementById("paymentMessage").innerText=
-"Payments are coming soon. You can use the free version while we prepare the paid plans.";
+Topic
 
-}
 
-window.onload=function(){
+Business type
 
-loadBusiness();
-displaySaved();
 
-};
+Platform
 
-</script>
 
-</body>
-</html>
+
+
+Generate relevant hashtags grouped into:
+
+
+
+
+High reach
+
+
+Medium reach
+
+
+Niche
+
+
+
+
+Include Copy All button.
+
+
+TOOL 6 — CONTENT PLANNER
+
+
+Allow the user to enter:
+
+
+
+
+Business
+
+
+Platform
+
+
+Posting frequency
+
+
+Content goal
+
+
+
+
+Generate a 7-day content calendar.
+
+
+Each day should contain:
+
+
+
+
+Content type
+
+
+Topic
+
+
+Caption idea
+
+
+CTA
+
+
+Suggested hashtags
+
+
+
+
+FREE PLAN
+
+
+Allow free users limited access.
+
+
+Free:
+
+
+
+
+5 AI generations per month
+
+
+Social posts
+
+
+Captions
+
+
+Hashtags
+
+
+
+
+PRO PLAN
+
+
+Create a Pro subscription screen.
+
+
+Suggested pricing:
+R99/month
+
+
+Pro includes:
+
+
+
+
+Unlimited generations
+
+
+All AI tools
+
+
+Content planner
+
+
+Ad copy generator
+
+
+Business ideas
+
+
+Priority features
+
+
+
+
+Do not connect real payment processing yet.
+Use a clearly labelled placeholder for payment integration.
+
+
+SAVED CONTENT
+
+
+Allow logged-in users to save generated content.
+
+
+Create:
+Saved Content
+
+
+Users can:
+
+
+
+
+View
+
+
+Copy
+
+
+Delete
+
+
+Search saved content
+
+
+
+
+SETTINGS
+
+
+Create:
+
+
+
+
+Profile
+
+
+Business information
+
+
+Subscription
+
+
+Usage
+
+
+Logout
+
+
+
+
+NAVIGATION
+
+
+Mobile bottom navigation:
+
+
+Home
+Tools
+Saved
+Profile
+
+
+Desktop navigation:
+
+
+Dashboard
+AI Tools
+Saved Content
+Pricing
+Profile
+
+
+DESIGN
+
+
+Use a modern SaaS design.
+
+
+Style:
+
+
+
+
+Clean
+
+
+Friendly
+
+
+Professional
+
+
+Mobile-first
+
+
+Rounded cards
+
+
+Clear buttons
+
+
+Easy-to-read typography
+
+
+Strong visual hierarchy
+
+
+
+
+Use the BizBOOST AI brand consistently.
+
+
+IMPORTANT FUNCTIONAL REQUIREMENTS
+
+
+All buttons must work.
+
+
+No dead buttons.
+
+
+No placeholder “coming soon” screens for the core tools.
+
+
+Forms must validate required fields.
+
+
+Generated results must appear inside attractive result cards.
+
+
+Add Copy buttons using clipboard functionality.
+
+
+Add loading states while AI content is generated.
+
+
+Add error handling.
+
+
+Make the application usable on Android phones.
+
+
+AI INTEGRATION
+
+
+Structure the application so the AI generation functions can connect to an AI API.
+
+
+If an AI API key is not available yet:
+
+
+
+
+Keep the integration ready.
+
+
+Use clearly marked development fallback responses.
+
+
+Do not expose API keys in frontend code.
+
+
+Put API calls behind secure server-side functions.
+
+
+
+
+FINAL CHECK
+
+
+Before completing the build:
+
+
+
+
+Make sure every page loads.
+
+
+Make sure mobile navigation works.
+
+
+Make sure all forms work.
+
+
+Make sure generated content displays correctly.
+
+
+Make sure Copy buttons work.
+
+
+Make sure Saved Content works.
+
+
+Make sure Login/Signup works.
+
+
+Make sure the branding says BizBOOST AI everywhere.
+
+
+Remove all references to “BizBoots AI”.
+
+
+Make the final application production-ready.
+
 
 
